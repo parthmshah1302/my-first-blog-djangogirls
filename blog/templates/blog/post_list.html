@@ -3,10 +3,13 @@
         <title>Parth's blog</title>
     </head>
     <body>
-        <p>Hi there!</p>
-        <p>It works!</p>
-        <em>This is an emphasized text</em>
-        <br>
-        <strong>This is a strongly emphasized text</strong>
+        <h1>First Blog using Django</h1>
+        {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+        {% endfor %}
     </body>
 </html>
